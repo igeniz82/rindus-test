@@ -17,9 +17,9 @@ public class hooks {
     }
 
     @After
-//    public void closeBrowser(){
-//        driver.quit();
-//    }
+    public void closeBrowser(){
+        driver.quit();
+    }
 
     public static ChromeDriver getDriver(){
         return driver;

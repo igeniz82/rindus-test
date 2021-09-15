@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: runner.Testrunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! - in runner.Testrunner
+initializationError(runner.Testrunner)  Time elapsed: 0.003 s  <<< ERROR!
+cucumber.runtime.CucumberException: Couldn't load plugin class: com.vimalselvam.cucumber.listener.ExtentCucumberFormatter
+Caused by: java.lang.ClassNotFoundException: com.vimalselvam.cucumber.listener.ExtentCucumberFormatter
+

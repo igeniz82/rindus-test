@@ -1,11 +1,17 @@
-# Feature: Search for an item in Amazon and add it to the cart
-#  As a user I want to be able to search for an item in Amazon, add it to the cart and then make changes
-#
-#  Scenario: Search for an item
-#    Given I am on Amazon website
-#     When I search for "hats for men"
-#      And I add "2" for the first item
-#      And I open the cart
-#     Then The total price is "11.99" and the quantity is "2"
-#      And I reduce the quantity to "1"
-#     Then The total price is "11.99" and the quantity is "2"
+Feature: Amazon Test
+  As a user I want to be able to perform a search, add an item to the cart and then make changes to it
+
+  Scenario Outline: Add 2 hats to the cart and then reduce it to 1
+    Given I am in Amazon website
+     When I perform a search for "hats for men"
+      And I am redirected to search results page
+      And I select the first item
+      And Add <initialQty> to the shopping cart
+      And I go to the shopping cart
+     Then The price is right
+      And I change quantity to <finalQty>
+     Then The price is right
+
+  Examples:
+    |initialQty|finalQty|
+    |    2     |   1    |

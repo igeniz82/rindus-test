@@ -21,7 +21,6 @@ public class ItemsPage extends BasePage{
         String price = this.getText(itemPrice);
         return price;
     }
-
     public void clickQtyDropdown(){
         this.click(qtyDropdown);
     }

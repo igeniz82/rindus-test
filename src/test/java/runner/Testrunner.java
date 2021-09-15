@@ -11,7 +11,8 @@ import static cucumber.api.SnippetType.CAMELCASE;
 @CucumberOptions(
         features = "src/test/java/features",
         glue = ("seleniumgluecode"),
-        snippets = CAMELCASE
+        snippets = CAMELCASE,
+        plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:reports/report.html"}
 )
 
 public class Testrunner {
