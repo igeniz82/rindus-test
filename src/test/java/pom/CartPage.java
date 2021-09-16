@@ -21,14 +21,14 @@ public class CartPage extends BasePage {
     public void clickQtyDropdown(){
         this.click(qtyDropdown);
     }
-    public String getPrice() {
+    public void waitForCartToLoad(){
         WebDriverWait wait = new WebDriverWait(driver,50);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@data-action='delete']")));
+        WebElement cartLoad = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@data-action='delete']")));
+    }
+    public String getPrice() {
         return this.getText(itemPrice);
     }
     public String getQuantity(){
-        WebDriverWait wait = new WebDriverWait(driver,50);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@data-action='delete']")));
         return this.getText(itemQty);
     }
     public void selectItemDropdown(int option){
