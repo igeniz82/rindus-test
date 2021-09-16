@@ -53,11 +53,13 @@ public class test extends TestBase{
         itemsPage.clickGoToCart();
     }
 
-    @Then("^The price is right$")
-    public void thePriceIsRight() throws Throwable{
+    @Then("^The price and quantity are right$")
+    public void thePriceAndQuantityAreRight() throws Throwable{
         Double cartPrice = utils.getPriceFormat(cartPage.getPrice());
+        int cartQuantity = utils.getQuantityFormat(cartPage.getQuantity());
         this.price = this.originalPrice * this.quantity;
         Assert.assertEquals(this.price, cartPrice);
+        Assert.assertEquals(this.quantity, cartQuantity);
     }
 
     @And("^I change quantity to (\\d+)$")

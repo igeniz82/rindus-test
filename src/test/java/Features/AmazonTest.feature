@@ -8,9 +8,9 @@ Feature: Amazon Test
       And I select the first item
       And Add <initialQty> to the shopping cart
       And I go to the shopping cart
-     Then The price is right
+     Then The price and quantity are right
       And I change quantity to <finalQty>
-     Then The price is right
+     Then The price and quantity are right
 
   Examples:
     |initialQty|finalQty|
